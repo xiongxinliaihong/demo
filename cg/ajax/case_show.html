@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/case_show.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body onload="show()">
+<div class="case_show">
+    <div class="header fixednav">
+        <ul type="none">
+            <li>
+                <a href="index.html">
+                    <span>首页</span>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <span>关于仓谷</span>
+                    <p>About CangGu</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="design.html">
+                    <span>仓谷设计</span>
+                    <p>CangGu design</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span>仓谷原创</span>
+                    <p>CangGu original</p>
+                </a>
+            </li>
+            <li>
+                <a href="join.html">
+                    <span>加入我们</span>
+                    <p>Join us</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="case_show_top case_show_flex">
+        <div class="case_show_top_left">
+            <ul type="none">
+                <img src="img/about/gj/al_01.png" width="16" height="16" border="0" alt="">
+                <b>-</b>
+                <a href="index.html" style="text-decoration:none;">首页</a>
+                <b>-</b>
+                <a href="design.html" style="text-decoration:none;">仓谷设计</a>
+
+            </ul>
+        </div>
+        <div class="case_show_top_right">
+            <ul type="none" class="case_show_flex" id="nav">
+                    <script>
+                            function show(){
+                                var xhr=new XMLHttpRequest();
+                                xhr.onreadystatechange=function(){
+                                if(xhr.readyState==4 && xhr.status==200) {
+                                    var result = xhr.responseText;
+                                    var cg_case_family = JSON.parse(result);
+                                    console.log(cg_case_family);
+                                    var strHTML = "";
+                                    strHTML=`
+                                    <li id="d${cg_case_family[0].lid}"><a href="design.html?id=${cg_case_family[0].lid}" >${cg_case_family[0].name}</a></li>
+                                    `;
+                                    for (var i = cg_case_family.length-1; i > 0; i--) {
+                                        strHTML+=`
+                                        <li id="d${cg_case_family[i].lid}"><a href="design.html?id=${cg_case_family[i].lid}" >${cg_case_family[i].name}</a></li>
+                                        `;
+                                          
+                                    } 
+                                    nav.innerHTML=strHTML;       
+                                    }
+                                   }
+                        
+                                xhr.open('get','cg/api/v1/cg_case_family/',true);
+                                xhr.send();
+                                show1();    
+                            }
+                    </script>
+            </ul>
+        </div>
+    </div>
+    <div class="title">
+        <h3><i>—</i> 案例展示 <i>—</i></h3>
+        <span>Case Show</span>
+    </div>
+
+    <div class="case_show_index">
+        <div class="case_show_con" id="caseShow">
+            
+        </div>
+        <div class="case_show_sxp">
+            <p><a href="javascript:history.go(-1)" style="text-decoration: none">[返回]</a></p>
+        </div>
+        <div class="case_show_project">
+            <div class="case_show_project_center">
+                <h3>更多项目推荐</h3>
+                <ul type="none" class="case_show_flex" id="case_show_flex">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="center">
+            <div class="top flex">
+                <img src="img/footer_02.png" width="59" height="95" border="0" alt="">
+                <dl>
+                    <dt>关于仓谷</dt>
+                    <dd>
+                        <a href="about.html">景观管家</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html">仓谷服务</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html">核心团队</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷设计</dt>
+                    <dd>
+                        <a href="">2018</a>
+                    </dd>
+                    <dd>
+                        <a href="">2017</a>
+                    </dd>
+                    <dd>
+                        <a href="">2016</a>
+                    </dd>
+                    <dd>
+                        <a href="">2015</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷原创</dt>
+                    <dd>
+                        <a href="">公司新闻</a>
+                    </dd>
+                    <dd>
+                        <a href="">行业新闻</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>加入我们</dt>
+                    <dd> 仓谷景观规划设计（深圳）有限公司</dd>
+                    <dd>广东省深圳市南山区华侨城创意园锦绣北街东金众工业园 202栋302室</dd>
+                    <dd>邮箱：ethan@canggula.com</dd>
+                </dl>
+                <img src="img/footer_01.png" width="121" height="121" border="0">
+            </div>
+            <div class="middle flex">
+                <p>
+                    <a href="">关于我们</a>
+                    <span>/</span>
+                    <a href="">收藏我们</a>
+                    <span>/</span>
+                    <a href="">联系我们</a>
+                </p>
+            </div>
+            <div class="bottom flex">
+                <p>
+                    <span>Copyright ©2016 仓谷景观规划设计（深圳）有限公司</span>
+                    <a href="http://www.heyou51.com/">网站建设：合优网络</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+    function show1(){
+        var xhr=new XMLHttpRequest();
+        var id=location.search.split("=")[1];
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4 && xhr.status==200) {
+                var result = xhr.responseText;
+                var details = JSON.parse(result);
+                console.log(details);
+                var strHTML = "";
+                var date=new Date(details[0].design_time);
+                var small_img=details[0].small_img.split(",");
+                var big_img=details[0].big_img.split(",");
+                var px=big_img.length*163+'px';
+                var length=big_img.length;
+                    strHTML+=`
+                    <div class="fl case_show_con_fl">
+                        <div class="icon_show">
+                            <img src="${big_img[0]}" class="my-big"/>
+                        </div>
+                        <div class="icon_all carousel">
+                            <a class="sprev" href="javascript:void(0)" id="left"></a>
+                            <div class="icon_list">
+                                <ul type="none" class="case_show_flex" id="b1" style="width:${px};">`
+                                for(var i=0;i<big_img.length;i++){
+                                    strHTML+=`
+                                    <li id="a1"><img src="${small_img[i]}" data-target="${big_img[i]}" class="my-small"/></li>
+                                    `}
+                                strHTML+=`
+                                </ul>
+                            </div>
+                            <a class="snext" href="javascript:void(0)" id="right"></a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="fr case_show_con_fr">
+                        <h3>${details[0].title}</h3>
+                        <span>${date.getFullYear()}年&nbsp;&nbsp;&nbsp;${details[0].address}</span>
+                        <b>项目介绍：</b>
+                        <p>${details[0].introduce}</p>
+                    </div>
+                    `;
+                                            
+                caseShow.innerHTML=strHTML; 
+                var b1=document.getElementById("b1");
+                var left=document.getElementById("left");
+                var right=document.getElementById("right");
+                var moved=0;                
+                left.onclick=function(e){
+                    var i=-1;
+                    if(!moved==0){
+                        moved+=i;
+                    }
+                    b1.style.marginLeft=-163*moved+"px";     
+                }
+                right.onclick=function(e){
+                    var i=1;
+                    if(!moved==length-4){
+                        moved+=i;
+                    }
+                    b1.style.marginLeft=-163*moved+"px";     
+                }
+
+               
+                    
+                $("#a1").parent().children(":first").addClass("on")
+
+                $(".icon_list")
+                .on("mouseover",".my-small",function(){
+                $(".my-big")
+                .attr(
+                    "src",
+                    $(this).attr("data-target")
+                )
+                $(this)
+                .parent()
+                .addClass("on")
+                .siblings()
+                .removeClass("on");
+                })
+                
+            }
+        }
+                        
+        xhr.open('get','cg/api/v1/cg_case_details/'+id,true);
+        xhr.send(); 
+        show2();   
+    }
+</script>
+<script>
+    function show2(){
+        var xhr=new XMLHttpRequest();
+        var id=location.search.split("=")[1];
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4 && xhr.status==200) {
+                var result = xhr.responseText;
+                var details = JSON.parse(result);
+                console.log(details);
+                var strHTML = "";
+                if(details.length-1<=4){
+                    for(i=0;i<details.length;i++){
+                        var date=new Date(details[i].design_time)
+                        if(details[i].cid!=id){
+                        console.log(details[i].cid);
+                        strHTML+=`
+                        <li>
+                            <a href="case_show.html?id=${details[i].cid}">
+                            <div class="case_show_project_center_img"><img src="${details[i].img}"></div>
+                            <span>${details[i].title}</span>
+                            <p>设计时间：${date.getFullYear()}年<br>项目进度：${details[i].plan}</p>
+                            <div class="btn btn btn-secondary">查看详情</div>
+                            </a>
+                        </li>
+                        
+                    `;}}
+                case_show_flex.innerHTML=strHTML;                           
+                }else if(details.length-1>4){
+                    var arr=[];
+                    for(;;){
+                        var a=parseInt(Math.random()*details.length);
+                        if(arr.indexOf(a)==-1){arr.push(a)}
+                        if(arr.length==4){break;}
+                    }
+                    console.log(arr) 
+                    for(i=0;i<4;i++){
+
+                        var date=new Date(details[arr[i]].design_time)
+                        if(details[arr[i]].cid!=id){
+                            console.log(details[arr[i]].cid);
+                        strHTML+=`
+                        <li>
+                            <a href="case_show.html?id=${details[arr[i]].cid}">
+                            <div class="case_show_project_center_img"><img src="${details[arr[i]].img}"></div>
+                            <span>${details[arr[i]].title}</span>
+                            <p>设计时间：${date.getFullYear()}年<br>项目进度：${details[arr[i]].plan}</p>
+                            <div class="btn btn btn-secondary">查看详情</div>
+                            </a>
+                        </li>
+                        `;
+                    }}
+                case_show_flex.innerHTML=strHTML; 
+                }
+                
+                                            
+            }     
+        }
+                        
+        xhr.open('get','cg/api/v1/cg_case_1/'+id,true);
+        xhr.send();    
+    }
+</script>
+</body>
+</html>

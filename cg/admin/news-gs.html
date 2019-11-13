@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>新闻添加</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- page style-->
+  <style>
+  .my_itemtitle{
+    font-size: 20px;
+  }
+  .my_info{
+    width: 50% !important;
+  }
+  .my_radio{
+    display: inline-block !important;
+  }
+  .my_formgroup{
+    display: inline-block !important;
+  }
+  </style>
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="css/Ionicons/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/AdminLTE/AdminLTE.min.css">
+  <!-- AdminLTE Skin -->
+  <link rel="stylesheet" href="css/AdminLTE/skin/skin-blue.min.css">
+  <!-- Google Font -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <a href="background.html" class="logo">
+      <span class="logo-mini"><b>仓谷</b></span>
+      <span class="logo-lg">仓谷景观管理系统</span>
+    </a>
+
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">导航切换</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="img/setting.png" class="user-image" alt="User Image">
+              <span class="hidden-xs" id="uname"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <img src="img/word.jpg" class="img-circle" alt="User Image">
+                <p>让学习成为一种习惯</p>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="password-change.html" class="btn btn-default btn-flat">修改密码</a>
+                </div>
+                <div class="pull-right">
+                  <a href="login.html" class="btn btn-default btn-flat">退出</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+<!-- 导航 -->
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">&nbsp;</li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>新闻管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="news-list.html">所有新闻</a></li>
+            <li><a href="news-gs.html">添加新闻</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>项目管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="product-list.html">所有项目</a></li>
+            <li><a href="product-add.html">添加项目</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>招聘管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="product-list.html">招聘信息</a></li>
+            <li><a href="product-add.html">发布招聘</a></li>
+            <li><a href="product-add.html">所有投聘</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- 主体 -->
+  <div class="content-wrapper">
+    
+
+
+    
+  </div>
+  
+
+
+  <footer class="main-footer">
+
+    <div class="pull-right hidden-xs">
+      缔造年轻人的中国梦
+    </div>
+
+    <strong>Copyright &copy; 2019 <a href="">熊</a>.</strong> All rights reserved.
+  </footer>
+
+  
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<script src="js/jquery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="js/datatables.net/jquery.dataTables.min.js"></script>
+<script src="js/datatables.net-bs/dataTables.bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="js/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="js/AdminLTE/adminlte.min.js"></script>
+<!-- page script -->
+<script>
+var n=localStorage.getItem("name");
+  console.log(n);
+  uname.innerHTML=`${n}`;
+</script>
+</body>
+</html>

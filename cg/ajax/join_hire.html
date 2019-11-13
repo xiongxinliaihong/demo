@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/join_hire.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+<div class="join_hire" >
+    <div class="header fixednav">
+        <ul type="none">
+            <li>
+                <a href="index.html">
+                    <span>首页</span>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <span>关于仓谷</span>
+                    <p>About CangGu</p>
+                </a>
+            </li>
+            <li>
+                <a href="design.html">
+                    <span>仓谷设计</span>
+                    <p>CangGu design</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span>仓谷原创</span>
+                    <p>CangGu original</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="join.html">
+                    <span>加入我们</span>
+                    <p>Join us</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="join_hire_top join_hire_flex">
+        <div class="join_hire_top_left">
+            <ul type="none">
+                <img src="img/about/gj/al_01.png" width="16" height="16" border="0" alt="">
+                <b>-</b>
+                <a href="index.html" style="text-decoration:none;">首页</a>
+                <b>-</b>
+                <a href="join.html" style="text-decoration:none;">加入我们</a>
+
+            </ul>
+        </div>
+        <div class="join_hire_top_right">
+            <ul type="none" class=" nav nav-tabs">
+                <li class="nav-item"><a href="join.html" class="nav-link ">加入我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="title">
+        <h3><i>—</i> 加入我们 <i>—</i></h3>
+        <span>Join us</span>
+    </div>
+
+    <div class="join_hire_con">
+        <div about="job_box">
+            <table class="join_hire_table">
+                <tr>
+                    <td class="t1 text-right">职务：</td>
+                    <td>
+                        <input id="position" type="text" class="input_bor">
+                        <span class="txt_red">&nbsp; *</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1 text-right">姓名：</td>
+                    <td>
+                        <input name="name" type="text" id="name" class="input_bor">
+                        <span class="txt_red">&nbsp; *</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1 text-right">电话：</td>
+                    <td>
+                        <input name="phone" type="text" id="phone" class="input_bor">
+                        <span class="txt_red">&nbsp; *</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1 text-right">邮箱：</td>
+                    <td>
+                        <input name="email" type="text" id="email" class="input_bor">
+                        <span class="txt_red">&nbsp; *</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1 text-right">备注：</td>
+                    <td>
+                        <textarea name="note" cols="45" rows="5" id="note" class="input_bor" style="width:400px; height:100px;  resize:none;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1 text-right">简历：</td>
+                    <td>
+                        <input name="resume" id=
+                        "resume" type="file" style="padding-left: 10px"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1"></td>
+                    <td>
+                        <button class="btn btn-info join_hire_btn" onclick="job()">提交</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="center">
+            <div class="top flex">
+                <img src="img/footer_02.png" width="59" height="95" border="0" alt="">
+                <dl>
+                    <dt>关于仓谷</dt>
+                    <dd>
+                        <a href="about.html?id=6">景观管家</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=7">仓谷服务</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=8">核心团队</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=9">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷设计</dt>
+                    <dd>
+                        <a href="">2018</a>
+                    </dd>
+                    <dd>
+                        <a href="">2017</a>
+                    </dd>
+                    <dd>
+                        <a href="">2016</a>
+                    </dd>
+                    <dd>
+                        <a href="">2015</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷原创</dt>
+                    <dd>
+                        <a href="">公司新闻</a>
+                    </dd>
+                    <dd>
+                        <a href="">行业新闻</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>加入我们</dt>
+                    <dd> 仓谷景观规划设计（深圳）有限公司</dd>
+                    <dd>广东省深圳市南山区华侨城创意园锦绣北街东金众工业园 202栋302室</dd>
+                    <dd>邮箱：ethan@canggula.com</dd>
+                </dl>
+                <img src="img/footer_01.png" width="121" height="121" border="0">
+            </div>
+            <div class="middle flex">
+                <p>
+                    <a href="">关于我们</a>
+                    <span>/</span>
+                    <a href="">收藏我们</a>
+                    <span>/</span>
+                    <a href="">联系我们</a>
+                </p>
+            </div>
+            <div class="bottom flex">
+                <p>
+                    <span>Copyright ©2016 仓谷景观规划设计（深圳）有限公司</span>
+                    <a href="http://www.heyou51.com/">网站建设：合优网络</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function job(){
+        var $position=position.value;
+		var $name=name.value;
+		var $phone=phone.value;
+		var $email=email.value;
+		var $note=note.value;
+		var $resume=resume.value;		
+
+		var xhr=new XMLHttpRequest();
+
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var result=xhr.responseText;
+				if(result=='1'){
+					alert('提交成功');
+					location.href="join.html";
+				}else{
+                    alert('请重新提交');
+                    location.href="join_hire.html";
+				}
+			}
+		}
+			
+			
+		xhr.open('post','/cg/api/v1/cg_join/',true);
+
+		var formdata='position='+$position+'&name='+$name+'&phone='+$phone+'&email='+$email+'&note='+$note+'&resume='+$resume;
+
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');	
+		xhr.send(formdata);
+		
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.layui-item{
+    margin-bottom:40px;
+}
+.layui-label{
+    font-size: 2rem;
+    margin-right: 20px;
+}
+.layui-input{
+    width:1200px;
+    padding-left:10px;
+    outline: none;
+    box-sizing: border-box;
+    font-size:2rem;
+}
+.layui-input-block{
+    display: inline-block;
+    vertical-align: top;
+}
+.layui-textarea{
+    min-height: 600px;
+    min-width: 1200px;
+    height: auto;
+    line-height: 20px;
+    padding: 6px 10px;
+    resize: vertical;
+    outline: none;
+    font-size:2rem;
+}

@@ -1,0 +1,151 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: '΢���ź�';
+    font-size: 14px;
+    color: #333333;
+}
+.join_flex{
+    display:flex;
+    justify-content:space-between;
+}
+a{
+    text-decoration:none;
+    font-size:12px;
+    color:#333;
+}
+img{
+    vertical-align: middle;
+    border:0;
+}
+.clear{
+    clear:both;
+}
+.join{
+    width:100%;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #68af63;
+    background-color: #fff;
+    border-color: #fff #fff #68af63;
+    border-bottom-width: 2px;
+    box-sizing: border-box;
+}
+.nav-tabs{
+    border-bottom: 0;
+}
+.join_top{
+    width:1200px;
+    margin: 120px auto 0 auto;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 28px;
+    position: relative;
+}
+.join_top_left{
+    width:200px;
+    min-width:200px;
+    height:19px;
+}
+.join_top_left ul{
+    background-color: #fff;
+    margin: 0;
+    padding-top: 1rem;
+}
+.join_top_left a{
+    color:#999;
+}
+.join_top_right{
+    width:180px;
+    box-sizing: border-box;
+}
+.join_top_right a{
+    font-size:16px;
+    color:#999;
+}
+.block:target{
+    display:block;
+}
+/*����*/
+.title{
+    width:1200px;
+    text-align:center;
+    margin:50px auto;
+}
+.title h3{
+    font-size:30px;
+    font-weight:normal;
+}
+.title h3 i{
+    font-size: 30px;
+    margin: 0 15px;
+    color: #999999;
+}
+.title span{
+    font-size:24px;
+    color:#999;
+}
+.tab-content{
+    margin-bottom: 80px;
+}
+
+.aw{
+    margin: 0 auto;
+    width:1200px;
+}
+
+.joblist{
+    width: 900px;
+    margin: 0 auto;
+}
+.job_duty{
+    display: block;
+    padding: 5px 0;
+    margin: 0;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+.job_duty::after{
+    content: "";
+    clear: both;
+}
+.job_duty span{
+    float:right;
+}
+.job_require{
+    font-weight: bold;
+    padding: 8px 0 3px;
+    color:#666;
+}
+.fl{
+    float: left;
+}
+
+
+.pagination-container{
+    margin-top:100px; 
+    text-align: center;
+}
+.pagination{
+    display: inline-block;
+}
+.pagination a{
+    background-color: #999;
+    color: #fff;
+    padding: 2px 8px;
+    text-decoration:none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor:pointer;
+}
+.pagination a.active{
+    background-color: #85D1FF;
+}
+.page-change{
+    margin: 0 15px;
+    cursor:pointer;
+}
+.skip input{
+        width: 50px;
+}

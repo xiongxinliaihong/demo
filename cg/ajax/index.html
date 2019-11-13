@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<script src="js/jquery-1.11.3.js"></script>
+</head>
+<body  onload="show()">
+	<div class="index">
+		<div class="bnner">
+			<img src="img/index/2017081516311078.jpg"  height="750" border="0" alt="">
+		</div>
+
+<!--  头部	 -->
+		<div class="index_head">
+			<div class="header fixednav1" id="head">
+				<ul type="none">
+					<li class="active">
+						<a href="index.html">
+							<span>首页</span>
+							<p>Home</p>
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							<span>关于仓谷</span>
+							<p>About CangGu</p>
+						</a>
+					</li>
+					<li>
+						<a href="design.html">
+							<span>仓谷设计</span>
+							<p>CangGu design</p>
+						</a>
+					</li>
+					<li>
+						<a href="news.html">
+							<span>仓谷原创</span>
+							<p>CangGu original</p>
+						</a>
+					</li>
+					<li>
+						<a href="join.html">
+							<span>加入我们</span>
+							<p>Join us</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			window.onscroll=function(){
+				var scrollTop=
+					document.body.scrollTop
+					||document.documentElement.scrollTop;
+				//console.log(scrollTop);
+				if(scrollTop>=1){
+					head.style.top='0px'
+				}else{
+					head.style.top='685px';
+				}
+			}
+		</script>
+<!--	关于仓谷  -->
+		<div class="about_us">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>关于仓谷</h3>
+				<img src="img/index/title_01.png" width="321" height="2" border="0" alt="">
+				<p>ABOUT US</p>
+			</div>
+			<!-- 内容 -->
+			<div class="about">
+				<div class="preface">
+					<span>景观室内一体化、设计施工一体化、苗木软装一体化，以前期设计至后期施工的全流程管家式服务，确保每一个项目具备良好的可落地性与最终效果。<br>仓谷景观正从多元化项目的不断积累中，逐渐完成从传统设计流程与规模向项目，朝中小型精品项目过渡。
+					</span>
+				</div> 
+				<ul type="none" class="index_flex">
+					<li>
+						<h3>业务范围</h3>
+						<p>通过丰富的精品项目设计与施工监管经验，为客户提供全流程景观管家式服务。</p>
+					</li>
+					<li>
+						<h3>目标市场</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;仓谷以大中型精品景观项目为市场导向，承接高端办公总部、中大型商业综合体、市政公园精品度假酒店、别墅、会所及高端住宅</p>
+						<span>在未来，仓谷设计将结合线上线下，以丰富的精品项目设计与施工经验，针对设计周边的多元化实体经营平台，发展不同于传统设计行业的全新领域。</span>
+					</li>
+					<li>
+						<h3>企业文化</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;对客户，秉持以创造力与可实施性为本的设计宗旨，将设计创意与实施效果放在首位。对同事，通过营造别样欢乐的职场工作氛围，在高效的创意发掘和知识分享中与每一位同仁共同进步，与公司共同发展。</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+<!--  仓谷设计  -->
+		<div class="case">
+			<div class="case_center">
+				<!-- 标题 -->
+				<div class="title">
+					<h3>仓谷设计</h3>
+					<img src="img/index/title_01.png" width="321" height="2" border="0" alt="">
+					<p>CASE</p>
+				</div>
+				<!-- 导览行 -->
+				<div class="case_nav">
+					<ul type="none" class="index_flex" id="nav1">
+						<script>
+								function show(){
+									var xhr=new XMLHttpRequest();
+									xhr.onreadystatechange=function(){
+									if(xhr.readyState==4 && xhr.status==200) {
+										var result = xhr.responseText;
+										var cg_case_family = JSON.parse(result);
+										var strHTML = "";
+										strHTML=`
+                                    	<li id="d${cg_case_family[0].lid}"><a href="design.html?id=${cg_case_family[0].lid}" >${cg_case_family[0].name}</a></li>
+                                    	`;
+                                    	for (var i = cg_case_family.length-1; i > cg_case_family.length-5; i--) {
+											strHTML+=`
+											<li id="d${cg_case_family[i].lid}"><a href="design.html?id=${cg_case_family[i].lid}" >${cg_case_family[i].name}</a></li>
+											`;      
+										} 
+										nav1.innerHTML=strHTML;
+										}    
+									}
+							
+									xhr.open('get','cg/api/v1/cg_case_family/',true);
+									xhr.send(); 
+									show1();  
+								}
+							</script>
+					</ul>
+				</div>
+				<!-- 项目 -->
+				<div class="case_con">
+					<ul type="none" class=" index_flex" id="cgCase">
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+<!-- fw -->
+		<div class="service">
+			<!-- 标题 -->
+			<div class="title">
+				<h3>仓谷服务</h3>
+				<img src="img/index/title_01.png" width="321" height="2" border="0" alt="">
+				<p>SERVICE</p>
+			</div>
+			<div class="service_page">
+				<div class="service_content">
+					<div class="service_content_img">
+						<div class="service_images add"></div>
+						<div class="service_images pos-1"></div>
+						<div class="service_images pos-2"></div>
+						<div class="service_images pos-3"></div>
+						<div class="service_images pos-4"></div>
+					</div>
+					
+					<div class="service_content_text" id="txt">
+						<div class="service_left move" data-i=1>
+							<a href="show.html?id=10">
+								<h6>
+									<img src="img/index/mu_01.png" width="28" height="28" border="0" alt="">
+									传统商住类景观
+									<p>The residential landscape</p>
+								</h6>
+							</a>
+							<p id="p">经验丰富的仓谷设计团队在全国范围内承接的高端住宅、商业类项目，以设计树立品牌为目标。
+							</p>
+						</div>
+						<div class="service_right move" data-i=2>
+							<a href="show.html?id=11">
+								<h6>
+									高档别墅&会所
+									<img src="img/index/mu_02.png" width="28" height="28" border="0" alt="">
+									<p>Upscale hotel & club</p>
+								</h6>
+							</a>
+							<p  id="p">针对高端客户，仓谷景观提供室内外从前期设计至后期施工的一站式设计服务，严格把控设计项目的每一个环节。
+							</p>
+						</div>
+						<div class="clear"></div>
+						<div class="service_left_1 move" data-i=3>
+							<a href="show.html?id=12">
+								<h6>
+									<img src="img/index/mu_03.png" width="28" height="28" border="0" alt="">
+									美丽乡村景观规划
+									<p>Landscape planning</p>
+								</h6>
+							</a>
+							<p  id="p">仓谷设计团队近年来持续参与全国范围内美丽乡村的规划设计，为乡村带来利好的同时积极关注公司未来发展的方向。
+							</p>
+						</div>
+						<div class="service_right_1 move" data-i=4>
+							<a href="show.html?id=13">
+								<h6>
+									精品度假酒店 
+									<img src="img/index/mu_04.png" width="28" height="28" border="0" alt="">
+									<p>Municipal class landscape</p>
+								</h6>
+							</a>
+							<p  id="p">通过设计创意、对目的地自然资源与文化背景及客户群体的研究，打造当地精品度假酒店标杆。
+							</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>	
+		</div>
+<script>
+	$(".move").hover(
+		function(){
+			//console.log($(this)[0]);
+			var i=$(this).attr("data-i");
+			//console.log(i);
+			$(this).find("a>h6").css("color","#68af63");
+			if(i==1){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_01_h.png"});
+				$(".pos-1").addClass("add")
+				.siblings()
+  				.removeClass("add");
+			}else if(i==2){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_02_h.png"});
+				$(".pos-2").addClass("add")
+				.siblings()
+  				.removeClass("add");
+			}else if(i==3){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_03_h.png"});
+				$(".pos-3").addClass("add")
+				.siblings()
+  				.removeClass("add");
+			}else if(i==4){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_04_h.png"});
+				$(".pos-4").addClass("add")
+				.siblings()
+  				.removeClass("add");
+			}
+	},function(){
+		$(".service_content_img>div:first-child")
+		.addClass("add")
+		.siblings()
+		  .removeClass("add");
+		  $(this).find("a>h6").css("color"," #999");
+		  var i=$(this).attr("data-i");
+		  if(i==1){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_01.png"});
+			}else if(i==2){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_02.png"});
+			}else if(i==3){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_03.png"});
+			}else if(i==4){
+				$(this).find("a>h6>img").attr({src:"img/index/mu_04.png"});
+			}
+	}
+	)
+	
+</script>
+
+
+<!-- 仓谷原创 -->
+		<div class="work" >
+			<!-- 标题 -->
+			<div class="title">
+				<h3>仓谷原创</h3>
+				<img src="img/index/title_01.png" width="321" height="2" border="0" alt="">
+				<p>ORIGINAL WORKS</p>
+			</div>
+			<div class="work_preface">仓谷景观拥有一支国际化的团队，主要成员由来自业内顶级外企专业景观公司总监、主创设计师和香港大学景观研究团队及中国本土<br>的高级园林工程师、植物设计师、景观施工图设计师及其他专业工程师组成。
+			</div>
+			<div class="work_left">
+				<img src="img/index/index_15.jpg" width="521" height="287" border="0" alt="">
+				<p><a href="news_show.html?id=1">惠州华润小径湾艾美酒店【现场考察】</a></p>
+			</div>	
+			<div class="work_right">
+				<ul type="none" id="news">
+					
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+	
+<!-- 尾部	 -->
+		<div class="footer">
+			<div class="center">
+				<div class="top flex">
+					<img src="img/footer_02.png" width="59" height="95" border="0" alt="">
+					<dl>
+						<dt>关于仓谷</dt>
+						<dd>
+						 <a href="about.html?id=6">景观管家</a>
+						</dd>
+						<dd>
+							<a href="about.html?id=7">仓谷服务</a>
+						</dd>
+						<dd>
+							<a href="about.html?id=8">核心团队</a>
+						</dd>
+						<dd>
+							<a href="about.html?id=9">联系我们</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>仓谷设计</dt>
+						<dd>
+							<a href="">2018</a>
+						</dd>
+						<dd>
+							<a href="">2017</a>
+						</dd>
+						<dd>
+							<a href="">2016</a>
+						</dd>
+						<dd>
+							<a href="">2015</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>仓谷原创</dt>
+						<dd>
+							<a href="">公司新闻</a>
+						</dd>
+						<dd>
+							<a href="">行业新闻</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>加入我们</dt>
+						<dd> 仓谷景观规划设计（深圳）有限公司</dd>
+						<dd>广东省深圳市南山区华侨城创意园锦绣北街东金众工业园 202栋302室</dd>
+						<dd>邮箱：ethan@canggula.com</dd>
+					</dl>
+					<img src="img/footer_01.png" width="121" height="121" border="0">
+				</div>
+				<div class="middle flex">
+					<p>
+						<a href="">关于我们</a>
+						<span>/</span>
+						<a href="">收藏我们</a>
+						<span>/</span>
+						<a href="">联系我们</a>
+					</p>
+				</div>
+				<div class="bottom flex">
+				<p>
+					<span>Copyright ©2016 仓谷景观规划设计（深圳）有限公司</span>
+					<a href="http://www.heyou51.com/">网站建设：合优网络</a>
+					</p>	
+				</div>
+			</div>	
+		</div>
+
+		<script>
+			function show1(){
+				var xhr=new XMLHttpRequest();
+
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200) {
+						var result = xhr.responseText;
+						var cg_case = JSON.parse(result);
+						console.log(cg_case);
+						var strHTML = "";
+						for (var i = cg_case.length-10; i < cg_case.length ; i++) {
+							var date=new Date(cg_case[i].design_time)
+							strHTML+=`
+							<li>
+								<div class="case_img">
+									<a href="case_show.html?id=${cg_case[i].cid}">
+										<img src=${cg_case[i].img} width="232.8" height="154.22" border="0" alt="">
+									</a>
+								</div>
+
+								<div class="case_content">
+									<a href="">${cg_case[i].title}</a>
+									<p>设计时间：${date.getFullYear()}年<br>项目进度：${cg_case[i].plan}...</p>
+								</div>
+							</li> 
+							`;
+						} 
+						cgCase.innerHTML=strHTML;       
+						}
+					}
+			
+				xhr.open('get','cg/api/v1/cg_case/',true);
+				xhr.send();
+     
+				 show2();
+				}
+				function show2(){
+					var xhr=new XMLHttpRequest();
+					xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200) {
+						var result = xhr.responseText;
+						var cg_news = JSON.parse(result);
+						console.log(cg_news);
+						var strHTML = "";
+						for (var i = 0; i < 3; i++) {
+							var date=new Date(`${cg_news[i].time}`);
+							var seperator1 = "-";
+							var year = date.getFullYear();
+							var month = date.getMonth() + 1;
+							var strDate = date.getDate();
+							if (month >= 1 && month <= 9) {
+								month = "0" + month;
+							}
+							if (strDate >= 0 && strDate <= 9) {
+								strDate = "0" + strDate;
+							}
+							var ym=year+seperator1+month;
+							strHTML+=`
+								<li class="news">
+									<div class="cgnr fl">
+										<a href="news_show.html?id=${cg_news[i].nid}">${cg_news[i].title}</a>
+										<p></p>
+									</div>
+									<div class="cgnr_icon fr">
+										<span>${strDate}</span>
+										<p>${ym}</p>
+									</div>
+									<div class="clear"></div>
+								</li>
+							`;
+						} 
+						news.innerHTML=strHTML;
+						$(".news").hover(function(){
+							$(this).find("a").css("color","#68af63");
+							$(this).find(".cgnr_icon").css("background","url(../img/index/index3_22.png) no-repeat");  
+						},function(){
+							$(this).find(".cgnr_icon").css("background","url(../img/index/index3_21.png) no-repeat"); 
+							$(this).find("a").css("color"," #999");
+							}
+							)
+						}
+					}
+			
+				xhr.open('get','cg/api/v1/cg_news/',true);
+				xhr.send();
+				}
+		</script>
+	</div>
+</body>
+</html>

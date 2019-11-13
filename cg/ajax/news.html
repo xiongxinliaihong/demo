@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body onload="show()">
+<div class="news" >
+    <div class="header fixednav">
+        <ul type="none">
+            <li>
+                <a href="index.html">
+                    <span>首页</span>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <span>关于仓谷</span>
+                    <p>About CangGu</p>
+                </a>
+            </li>
+            <li>
+                <a href="design.html">
+                    <span>仓谷设计</span>
+                    <p>CangGu design</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="news.html">
+                    <span>仓谷原创</span>
+                    <p>CangGu original</p>
+                </a>
+            </li>
+            <li>
+                <a href="join.html">
+                    <span>加入我们</span>
+                    <p>Join us</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="news_top news_flex">
+        <div class="news_top_left">
+            <ul type="none">
+                <img src="img/about/gj/al_01.png" width="16" height="16" border="0" alt="">
+                <b>-</b>
+                <a href="index.html">首页</a>
+                <b>-</b>
+                <a href="news.html">仓谷原创</a>
+                <span id="navs"></span>
+                <script>
+                        function show2(){
+                            var xhr=new XMLHttpRequest();
+                            var id = location.search.split("=")[1];
+                            xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4 && xhr.status==200) {
+                                var result = xhr.responseText;
+                                var cg_news_family = JSON.parse(result);
+                                var strHTML = "";
+                                for (var i = 0; i < cg_news_family.length; i++) {
+                                    strHTML+=`
+                                    <b>-</b>
+                                    <a href="news.html?id=${id}" style="text-decoration:none;">${cg_news_family[i].name}</a>
+                                        `;      
+                                    } 
+                                    navs.innerHTML=strHTML;                                  
+                                }    
+                            }
+                            
+                            xhr.open('get','cg/api/v1/cg_news_family/'+id,true);
+                            xhr.send();   
+                        }
+                    </script>
+            </ul>
+        </div>
+        <div class="news_top_right">
+            <ul type="none" class=" news_flex" id="nav">
+                <script>
+                        function show(){
+                            var xhr=new XMLHttpRequest();
+                            xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4 && xhr.status==200) {
+                                var result = xhr.responseText;
+                                var cg_news_family = JSON.parse(result);
+                                var strHTML = "";
+                                for (var i = 0; i < cg_news_family.length; i++) {
+                                    strHTML+=`
+                                    <li id="d${cg_news_family[i].fid}"><a href="news.html?id=${cg_news_family[i].fid}" >${cg_news_family[i].name}</a></li>
+                                    `;      
+                                } 
+                                nav.innerHTML=strHTML;
+                                var id1 = location.search.split("=")[1];  
+                                var ul=document.getElementById("nav");
+                                console.log(ul);
+                                var lis=ul.children;
+                                console.log(lis);
+                                for(var li of lis){
+                                    console.log(li);
+                                    var $id=li.getAttribute("id");
+                                    console.log($id);
+                                    if(id1==$id.slice(1)){
+                                        var $id1=`d${id1}`;
+                                        console.log($id1);
+                                        var li1=document.getElementById($id1);
+                                        console.log(li1);
+                                        li1.className="active";
+                                    }else if(id1==null){ 
+                                             var li2=document.getElementById("d1");
+                                             console.log(li2)
+                                             li2.className="active";
+                                         }  
+                                }     
+                                }    
+                            }
+                    
+                            xhr.open('get','cg/api/v1/cg_news_family/',true);
+                            xhr.send();
+                            show2(); 
+                            show1();
+                        }
+                </script>
+            </ul>
+        </div>
+    </div>
+    <div class="title">
+        <h3><i>—</i> 仓谷原创 <i>—</i></h3>
+        <span>Original works</span>
+    </div>
+
+    <div class="tab-content">
+            <div class="aw">
+                <div class="newslist">
+                    <ul type="none" id="newsSHOW">
+                        
+                        <script>
+                                function show1(){
+                                    var xhr=new XMLHttpRequest();
+                                    var id=location.search.split("=")[1];
+                                    if(id==null){
+                                        id=1;
+                                    }
+                                    xhr.onreadystatechange=function(){
+                                        if(xhr.readyState==4 && xhr.status==200) {
+                                            var result = xhr.responseText;
+                                            var cg_news = JSON.parse(result);
+                                            console.log(cg_news);
+            
+                                            let pagination =  document.querySelector('.pagination');//分页容器
+                                            let pageCount = Math.ceil(cg_news.length/6); //根据数据的长度计算总共几页
+                                            let newsDataRender = [];//每页要显示的数据
+                                            let p = 1;//根据p值显示每页的数据
+            
+                                            let render = ()=>{
+                                                newsSHOW.innerHTML = ' ';
+                                                newsDataRender = cg_news.slice((p-1)*6,6*p); //每页要显示的数据,一页显示6条
+                                                newsDataRender.forEach((item,index)=>{
+                                                    var date=new Date(item.time)
+                                                    newsSHOW.innerHTML += `
+                                                    <li>
+                                                        <a href="news_show.html?id=${item.nid}">
+                                                            <span>${date.toLocaleDateString()}</span>${item.title}       
+                                                        </a>
+                                                    </li>
+                                                    `;
+                                            });
+                                            };
+                                            //初始化页面
+                                            render();
+            
+                                            //渲染分页
+                                            for(let i = 1;i<=pageCount;i++){
+                                                pagination.innerHTML +=`<a>${i}</a>`;
+                                            }
+                                            pagination.innerHTML +=`<span class="skip">跳转至 <input type="text"> </span>页`;//获取页数
+                                            let asAll = pagination.querySelectorAll('a');
+                                            //页面刚进来时第一页高亮
+                                            asAll[p-1].classList.add('active');
+            
+                                            //遍历总页数
+                                            asAll.forEach((item,index)=>{
+                                            //点击页数
+                                                item.onclick = function () {
+                                                    for(let j=0;j<asAll.length;j++){
+                                                        asAll[j].classList.remove('active');
+                                                    }
+                                                this.classList.add('active');
+                                                    p=index+1; //点击页数，改变p的值，以改变这个页面要显示的数据，达到分页的效果
+                                                    render(); //重新渲染页面
+                                                }
+                                            });
+            
+                                            //获取跳转input框
+                                            let skipInput = document.querySelector('.skip input');
+                                            //触发enter键实现跳转到输入页
+                                            skipInput.onkeydown = function (ev) {
+                                            if(ev.keyCode==13 && skipInput.value != '') {//移除每个页数按钮的active
+                                                for(let j=0;j<asAll.length;j++){
+                                                    asAll[j].classList.remove('active');
+                                                }
+                                            p  = ev.target.value;
+                                            //给当前的页数按钮添加上active        
+                                            asAll[p-1].classList.add('active');
+                                                    if( p>asAll.length){
+                                                        return;
+                                                    }//重新渲染页面
+                                                    render();
+                                                }
+                                            }
+            
+                                            //点击上一页下一页，改变高亮
+                                            let changePageClass = ()=>{
+                                                for(let j=0;j<asAll.length;j++){
+                                                    asAll[j].classList.remove('active');
+                                                }
+                                                asAll[p-1].classList.add('active');
+                                            };
+                                            //上一页
+                                            let prev = document.querySelector('.prev');
+                                            prev.onclick = function (e) {
+                                                    if(p<=1){
+                                                        console.log(p);
+                                                        return;
+                                                    }else{
+                                                        p=p-1;
+                                                        changePageClass();
+                                                        render();
+                                                    }
+                                            };
+                                            //下一页
+                                            let next = document.querySelector('.next');
+                                            next.onclick = function () {
+                                                if(p>=asAll.length){
+                                                    return;
+                                                }
+                                                p=p+1;
+                                                changePageClass();
+                                                render();
+                                            }
+                 
+                                            }
+                                        }
+                                
+                                    xhr.open('get','cg/api/v1/cg_news/'+id,true);
+                                    xhr.send();
+                        
+                                    }
+                                </script> 
+                    </ul>
+                    </div>
+                    <div class="pagination-container">
+                        <span class="page-change prev">上一页</span>
+                        <div class="pagination"></div>
+                        <span class="page-change next">下一页</span>
+                    </div>
+            </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="center">
+            <div class="top flex">
+                <img src="img/footer_02.png" width="59" height="95" border="0" alt="">
+                <dl>
+                    <dt>关于仓谷</dt>
+                    <dd>
+                        <a href="about.html?id=6">景观管家</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=7">仓谷服务</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=8">核心团队</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=9">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷设计</dt>
+                    <dd>
+                        <a href="">2018</a>
+                    </dd>
+                    <dd>
+                        <a href="">2017</a>
+                    </dd>
+                    <dd>
+                        <a href="">2016</a>
+                    </dd>
+                    <dd>
+                        <a href="">2015</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷原创</dt>
+                    <dd>
+                        <a href="">公司新闻</a>
+                    </dd>
+                    <dd>
+                        <a href="">行业新闻</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>加入我们</dt>
+                    <dd> 仓谷景观规划设计（深圳）有限公司</dd>
+                    <dd>广东省深圳市南山区华侨城创意园锦绣北街东金众工业园 202栋302室</dd>
+                    <dd>邮箱：ethan@canggula.com</dd>
+                </dl>
+                <img src="img/footer_01.png" width="121" height="121" border="0">
+            </div>
+            <div class="middle flex">
+                <p>
+                    <a href="">关于我们</a>
+                    <span>/</span>
+                    <a href="">收藏我们</a>
+                    <span>/</span>
+                    <a href="">联系我们</a>
+                </p>
+            </div>
+            <div class="bottom flex">
+                <p>
+                    <span>Copyright ©2016 仓谷景观规划设计（深圳）有限公司</span>
+                    <a href="http://www.heyou51.com/">网站建设：合优网络</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

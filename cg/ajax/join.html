@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/join.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body onload="cg_apply()">
+<div class="join">
+    <div class="header fixednav">
+        <ul type="none">
+            <li>
+                <a href="index.html">
+                    <span>首页</span>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <span>关于仓谷</span>
+                    <p>About CangGu</p>
+                </a>
+            </li>
+            <li>
+                <a href="design.html">
+                    <span>仓谷设计</span>
+                    <p>CangGu design</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span>仓谷原创</span>
+                    <p>CangGu original</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="join.html">
+                    <span>加入我们</span>
+                    <p>Join us</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="join_top join_flex">
+        <div class="join_top_left">
+            <ul type="none">
+                <img src="img/about/gj/al_01.png" width="16" height="16" border="0" alt="">
+                <b>-</b>
+                <a href="index.html" style="text-decoration:none;">首页</a>
+                <b>-</b>
+                <a href="join.html" style="text-decoration:none;">加入我们</a>
+
+            </ul>
+        </div>
+        <div class="join_top_right">
+            <ul type="none" class=" nav nav-tabs">
+                <li class="nav-item"><a href="#31" class="nav-link active" data-toggle="tab">加入我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="title">
+        <h3><i>—</i> 加入我们 <i>—</i></h3>
+        <span>Join us</span>
+    </div>
+
+    <div class="tab-content">
+
+        <div id="31" class="tab-pane active" >
+            <div class="aw">
+                <ul class="joblist" type="none" id="apply">
+                    
+                </ul>
+                <div class="pagination-container">
+                    <span class="page-change prev">上一页</span>
+                    <div class="pagination"></div>
+                    <span class="page-change next">下一页</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="center">
+            <div class="top flex">
+                <img src="img/footer_02.png" width="59" height="95" border="0" alt="">
+                <dl>
+                    <dt>关于仓谷</dt>
+                    <dd>
+                        <a href="about.html?id=6">景观管家</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=7">仓谷服务</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=8">核心团队</a>
+                    </dd>
+                    <dd>
+                        <a href="about.html?id=9">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷设计</dt>
+                    <dd>
+                        <a href="">2018</a>
+                    </dd>
+                    <dd>
+                        <a href="">2017</a>
+                    </dd>
+                    <dd>
+                        <a href="">2016</a>
+                    </dd>
+                    <dd>
+                        <a href="">2015</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>仓谷原创</dt>
+                    <dd>
+                        <a href="">公司新闻</a>
+                    </dd>
+                    <dd>
+                        <a href="">行业新闻</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>加入我们</dt>
+                    <dd> 仓谷景观规划设计（深圳）有限公司</dd>
+                    <dd>广东省深圳市南山区华侨城创意园锦绣北街东金众工业园 202栋302室</dd>
+                    <dd>邮箱：ethan@canggula.com</dd>
+                </dl>
+                <img src="img/footer_01.png" width="121" height="121" border="0">
+            </div>
+            <div class="middle flex">
+                <p>
+                    <a href="">关于我们</a>
+                    <span>/</span>
+                    <a href="">收藏我们</a>
+                    <span>/</span>
+                    <a href="">联系我们</a>
+                </p>
+            </div>
+            <div class="bottom flex">
+                <p>
+                    <span>Copyright ©2016 仓谷景观规划设计（深圳）有限公司</span>
+                    <a href="http://www.heyou51.com/">网站建设：合优网络</a>
+                </p>
+            </div>
+        </div>
+    </div>
+<script>
+    function cg_apply(){
+				var xhr=new XMLHttpRequest();
+
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200) {
+						var result = xhr.responseText;
+						var cg_apply = JSON.parse(result);
+						console.log(cg_apply);
+
+                        let pagination =  document.querySelector('.pagination');//分页容器
+                        let pageCount = Math.ceil(cg_apply.length/3); //根据数据的长度计算总共几页
+                        let newsDataRender = [];//每页要显示的数据
+                        let p = 1;//根据p值显示每页的数据
+            
+                        let render = ()=>{
+                            apply.innerHTML ="";
+                            newsDataRender = cg_apply.slice((p-1)*3,3*p); //每页要显示的数据,一页显示3条
+                            newsDataRender.forEach((item,index)=>{
+                            var date=new Date(item.state_time)
+                            apply.innerHTML += `
+                            <li>
+                                <h3 class="job_duty"><span><a href="join_hire.html">立刻应聘</a></span>${item.name}</h3>
+                                <p class="job_require">任职要求：</p>
+                                <p>${item.demand}</p>
+                                <p class="job_require">职务描述：</p>
+                                <div class="job_sty">
+                                    <div class="job_01 fl">招聘人数：</div>
+                                    <div class="job_02 fl ">${item.people}&nbsp;</div>
+                                    <div class="job_03 fl ml-5">工作地区：</div>
+                                    <div class="job_04 fl">${item.region}&nbsp;</div>
+                                    <div class="job_05 fl ml-5">开始时间：</div>
+                                    <div class="job_06 fl">${date.toLocaleDateString()}&nbsp;</div>
+                                    <div class="job_07 fl ml-5">结束时间：</div>
+                                    <div class="job_08 fl">${item.end_time}&nbsp;</div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                            `;
+                            });
+                        };
+                            //初始化页面
+                        render();
+            
+                        //渲染分页
+                        for(let i = 1;i<=pageCount;i++){
+                            pagination.innerHTML +=`<a>${i}</a>`;
+                        }
+                        pagination.innerHTML +=`<span class="skip">跳转至 <input type="text"> </span>页`;//获取页数
+                        let asAll = pagination.querySelectorAll('a');
+                        //页面刚进来时第一页高亮
+                        asAll[p-1].classList.add('active');
+            
+                        //遍历总页数
+                        asAll.forEach((item,index)=>{
+                        //点击页数
+                        item.onclick = function () {
+                            for(let j=0;j<asAll.length;j++){
+                                asAll[j].classList.remove('active');
+                            }
+                            this.classList.add('active');
+                                p=index+1; //点击页数，改变p的值，以改变这个页面要显示的数据，达到分页的效果
+                                    render(); //重新渲染页面
+                                }
+                            });
+            
+                            //获取跳转input框
+                            let skipInput = document.querySelector('.skip input');
+                            //触发enter键实现跳转到输入页
+                            skipInput.onkeydown = function (ev) {
+                                if(ev.keyCode==13 && skipInput.value != '') {//移除每个页数按钮的active
+                                for(let j=0;j<asAll.length;j++){
+                                    asAll[j].classList.remove('active');
+                                }
+                                p  = ev.target.value;
+                                //给当前的页数按钮添加上active        
+                                asAll[p-1].classList.add('active');
+                                if( p>asAll.length){
+                                    return;
+                                }//重新渲染页面
+                                render();
+                                }
+                            }
+            
+                            //点击上一页下一页，改变高亮
+                            let changePageClass = ()=>{
+                                for(let j=0;j<asAll.length;j++){
+                                    asAll[j].classList.remove('active');
+                                }
+                                asAll[p-1].classList.add('active');
+                            };
+                            //上一页
+                            let prev = document.querySelector('.prev');
+                            prev.onclick = function (e) {
+                                    if(p<=1){
+                                        console.log(p);
+                                        return;
+                                    }else{
+                                        p=p-1;
+                                        changePageClass();
+                                        render();
+                                    }
+                            };
+                            //下一页
+                            let next = document.querySelector('.next');
+                            next.onclick = function () {
+                                if(p>=asAll.length){
+                                    return;
+                                }
+                                p=p+1;
+                                changePageClass();
+                                render();
+                            }
+                 
+                            }
+                        }
+			
+				xhr.open('get','cg/api/v1/cg_apply/',true);
+				xhr.send();
+       	 	}
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: '΢���ź�';
+    font-size: 14px;
+    color: #333333;
+}
+.news_show_flex{
+    display:flex;
+    justify-content:space-between;
+}
+a{
+    text-decoration:none;
+    font-size:12px;
+}
+img{
+    vertical-align: middle;
+    border:0;
+}
+.clear{
+    clear:both;
+}
+.news_show{
+    width:100%;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #68af63;
+    background-color: #fff;
+    border-color: #fff #fff #68af63;
+    border-bottom-width: 2px;
+    box-sizing: border-box;
+}
+.nav-tabs{
+    border-bottom: 0;
+}
+.news_show_top{
+    width:1200px;
+    margin: 120px auto 0 auto;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 28px;
+    position: relative;
+}
+.news_show_top_left{
+    width:200px;
+    min-width:200px;
+    height:19px;
+}
+.news_show_top_left ul{
+    background-color: #fff;
+    padding: 0.5rem;
+}
+.news_show_top_left a{
+    color:#999;
+    text-decoration: none;
+}
+.news_show_top_right{
+    width:180px;
+    box-sizing: border-box;
+}
+.news_show_top_right ul{
+    margin: 0;
+    padding: 0.5rem;
+}
+.news_show_top_right a{
+    text-decoration: none;
+    font-size:14px;
+    color:#999;
+}
+.block:target{
+    display:block;
+}
+/*����*/
+.title{
+    width:1200px;
+    text-align:center;
+    margin:50px auto;
+}
+.title h3{
+    font-size:30px;
+    font-weight:normal;
+}
+.title h3 i{
+    font-size: 30px;
+    margin: 0 15px;
+    color: #999999;
+}
+.title span{
+    font-size:24px;
+    color:#999;
+}
+.tab-content{
+    margin-bottom: 80px;
+}
+.news_show_con{
+    width:1200px;
+    margin: 0 auto 100px auto;
+}
+.news_show_list{
+    width:900px;
+    margin: 0 auto;
+}
+.news_show_list_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 0 5px 0px;
+}
+.news_show_list_body p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    color: #3E3E3E;
+    font-family: Simsun;
+    font-size: 14px;
+    background-color: #FFFFFF;
+}
+.news_show_p1{
+    text-align: right;
+    margin-top: 150px;
+}
+.news_show_p1 a{
+    color:#666;
+    font-size:16px;
+}

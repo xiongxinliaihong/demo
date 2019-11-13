@@ -1,0 +1,265 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: '΢���ź�';
+    font-size: 14px;
+    color: #333333;
+}
+.case_show_flex{
+    display:flex;
+    justify-content:space-between;
+}
+a{
+    text-decoration:none;
+    font-size:12px;
+}
+img{
+    vertical-align: middle;
+    border:0;
+}
+.clear{
+    clear:both;
+}
+.case_show{
+    width:100%;
+}
+
+.case_show_top{
+    width:1200px;
+    margin: 120px auto 0 auto;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 28px;
+    position: relative;
+}
+.case_show_top_left{
+    width:200px;
+    min-width:200px;
+    height:19px;
+}
+.case_show_top_left ul{
+    padding: 0.5rem;
+    margin: 0;
+}
+.case_show_top_left a{
+    color:#999;
+    text-decoration: none;
+}
+.case_show_top_right{
+    width:600px;
+    box-sizing: border-box;
+}
+.case_show_top_right a{
+    text-decoration: none;
+    font-size:14px;
+    color:#999;
+}
+.case_show_top_right a:hover{
+    color:#68af63;
+}
+.case_show_top_right ul{
+    margin: 0;
+    padding: 0.5rem;
+}
+/*����*/
+.title{
+    width:1200px;
+    text-align:center;
+    margin:50px auto;
+}
+.title h3{
+    font-size:30px;
+    font-weight:normal;
+}
+.title h3 i{
+    font-size: 30px;
+    margin: 0 15px;
+    color: #999999;
+}
+.title span{
+    font-size:24px;
+    color:#999;
+}
+
+.case_show_index{
+    margin-bottom: 80px;
+    width: 100%;
+}
+.case_show_con{
+    width: 1200px;
+    height: 698px;
+    padding: 0 0 50px 0;
+    margin: 0 auto;
+    border-bottom: 2px solid #e1e1e1;
+}
+.case_show_con::after{
+    content: "";
+    clear: both;
+
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.case_show_con_fl{
+    width: 693px;
+}
+.case_show_con_fr{
+    width: 460px;
+}
+.case_show_con_fr h3{
+    font-size: 20px;
+    margin: 20px 0 8px;
+    font-weight: normal;
+}
+.case_show_con_fr span{
+    color: #999;
+    display: block;
+}
+.case_show_con_fr b{
+    margin: 30px 0 10px;
+    font-size: 16px;
+    font-weight: normal;
+    display: block;
+}
+.case_show_con_fr p{
+    margin-bottom: 30px;
+    line-height: 1.8em;
+}
+.icon_show{
+    width:693px;
+    height: 520px;
+    overflow: hidden;
+}
+.icon_show img{
+    width:693px;
+    height: 520px;
+}
+.icon_all{
+    width:693px;
+    height: 120px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+.icon_list{
+    width: 652px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+}
+.icon_list ul{
+    height: 120px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    /* transition: all .5s linear; */
+}
+.icon_list li{
+    display: inline-block;
+    width:163px;
+    height: 120px;
+    border:1px solid #999;
+    box-sizing: border-box;
+}
+.icon_list li img{
+    width:161px;
+    height: 118px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.sprev {
+    width: 14px;
+    height: 120px;
+    float: left;
+    display: block;
+    background: url(../img/case_show/lr_btn_d.png) no-repeat 0 32px;
+    margin-right: 6.5px;
+}
+.snext {
+    width: 14px;
+    height: 120px;
+    float: left;
+    display: block;
+    background: url(../img/case_show/lr_btn_d.png) no-repeat -14px 32px;
+    margin-left: 6.5px;
+}
+
+.case_show_a{
+    width:30px;
+    height:90%;
+    top:5%;
+    background-color: #999;
+    border-radius: 0.25rem;
+}
+
+.case_show_sxp{
+    text-align: right;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 50px;
+}
+.case_show_sxp::after{
+    content: "";
+    clear: both;
+}
+.case_show_sxp a{
+    color: #666;
+    font-size:16px;
+}
+
+
+.case_show_project{
+    background-color: #f1f1f1;
+    padding-bottom: 60px;
+}
+.case_show_project_center{
+    width: 1200px;
+    margin: 0 auto;
+}
+.case_show_project_center h3{
+    padding: 50px 0 35px;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+}
+.case_show_project_center li{
+    display: inline-block;
+}
+
+.case_show_project_center a:hover{
+    text-decoration:none;
+}
+.case_show_project_center a:hover img{
+    transform: scale(1.1);
+}
+.case_show_project_center a:hover .btn-secondary{
+    background-color: #68af63;
+}
+
+.case_show_project_center_img{
+    width:281px;
+    height:187px;
+    overflow:hidden;
+}
+.case_show_project_center_img img{
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.case_show_project_center li span{
+    font-size: 18px;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+.case_show_project_center li p{
+    color: #666666;
+}
+
+.on{
+    border:1px solid red !important;
+}

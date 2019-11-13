@@ -1,0 +1,93 @@
+.pagination-container{
+    text-align: right;
+}
+.pagination{
+    display: inline-block;
+}
+.pagination a{
+    background-color: #999;
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration:none;
+    border-radius: 5px;
+    margin-right:5px;
+    cursor:pointer;
+}
+.pagination a.active{
+    background-color: #85D1FF;
+}
+.page-change{
+    margin: 0 15px;
+    cursor:pointer;
+}
+.skip input{
+        width: 50px;
+}
+
+
+
+.modal,.modalNo{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background: rgba(0,0,0,0.3);
+    z-index:9999;
+}
+.modal_dialog{
+    width:400px;
+    height:200px;
+    margin:100px auto;
+    background: #fff;
+    border-radius: 2px;
+}
+.modal_header{
+    width: 400px;
+    height:42px;
+    line-height: 42px;
+    background: #e8e8e8;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    font-size: 16px;
+    padding-left: 20px;
+}
+.modal_information{
+    width:254px;
+    margin:0 auto;
+    margin-top:21px;
+    font-size: 16px;
+}
+.modalNo .modal_information{
+    width:169px;
+    margin:0 auto;
+    margin-top:44px;
+    font-size: 16px;
+}
+.modal_information>span{
+    position: relative;
+    top:-20px;
+}
+.yes,.no{
+    display: inline-block;
+    width:124px;
+    height:42px;
+    line-height: 42px;
+    border-radius: 2px;
+    font-size: 16px;
+    background: #ccc;
+    margin-top:17px;
+    cursor: pointer;
+    color: #fff;
+}
+.yes>span{
+    margin-left: 45px;
+}
+.no>span{
+    margin-left: 38px;
+}
+.yes{
+    margin-left:52px;
+    margin-right: 48px;
+    background: #0aa1ed;
+}

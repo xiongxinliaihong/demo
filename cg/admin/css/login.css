@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login{
+    width: 800px;
+    height:240px;
+    position: relative;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+}
+.login .right{
+    padding: 10px 80px;
+    width:400px;
+    height:240px;
+    float:right;
+    border-left:1px solid #dfe2e3;;
+}
+.login_form{
+    width:240px;
+    margin: 0 auto;
+}
+.login_uname, .login_upwd{
+    width:240px;
+    height:45px;
+    margin-bottom: 20px;
+}
+.login_uname:before{
+    content: "";
+    clear: both;
+}
+.login_upwd:before{
+    content: "";
+    clear: both;
+}
+.login_img{
+    width:50px;
+    height:45px;
+    background-color: #e7f0f4;
+    float: left;
+    background-image: url(../img/login/yonghu2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10% 0 0 10%;
+}
+.login_upwd .login_img{
+    background-image: url(../img/login/mima2.png);
+}
+.login_input{
+    float:right;
+}
+.login_input input{
+    background-color: #f2f8fb;
+    border: 0 !important;
+    outline: 0;
+    height: 45px !important;
+    width:190px;
+    color: #989898;
+    font-size: 15px;
+    padding-left:8px;
+    border-radius: 0 5% 5% 0;
+}
+
+.btn{
+    width:240px;
+    height:45px;
+    color:#fff;
+}
+.btn-success:focus, .btn-success.focus {
+    box-shadow: 0 0 0 0 !important;
+}

@@ -1,0 +1,142 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: '΢���ź�';
+    font-size: 14px;
+    color: #333333;
+}
+.news_flex{
+    display:flex;
+    justify-content:space-between;
+}
+a{
+    text-decoration:none;
+    font-size:12px;
+}
+img{
+    vertical-align: middle;
+    border:0;
+}
+.clear{
+    clear:both;
+}
+.news{
+    width:100%;
+}
+.news_top{
+    width:1200px;
+    margin: 120px auto 0 auto;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 28px;
+    position: relative;
+}
+.news_top_left{
+    width:200px;
+    min-width:200px;
+    height:19px;
+}
+.news_top_left ul{
+    background-color: #fff;
+    margin: 0;
+    padding: 0.5rem;
+}
+.news_top_left a{
+    color:#999;
+    text-decoration: none;
+}
+.news_top_right{
+    width:200px;
+    box-sizing: border-box;
+}
+.news_top_right ul{
+    margin: 0;
+    padding: 0.5rem;
+}
+.news_top_right li{
+    padding: 0.5rem
+}
+.news_top_right a{
+    text-decoration: none;
+    font-size:14px;
+    color:#999;
+}
+.news_top_right .active{
+	border-bottom:2px solid #68af63;
+	color: #495057; 
+}
+.block:target{
+    display:block;
+}
+/*����*/
+.title{
+    width:1200px;
+    text-align:center;
+    margin:50px auto;
+}
+.title h3{
+    font-size:30px;
+    font-weight:normal;
+}
+.title h3 i{
+    font-size: 30px;
+    margin: 0 15px;
+    color: #999999;
+}
+.title span{
+    font-size:24px;
+    color:#999;
+}
+.tab-content{
+    margin-bottom: 125px;
+}
+.aw{
+    width:1200px;
+    margin:0 auto;
+}
+.aw .newslist{
+    width: 900px;
+    margin: 0 auto;
+}
+.aw .newslist li{
+    padding: 6px 0 6px 15px;
+    clear: both;
+    border-bottom: dotted 1px #a8a8a8;
+    background: url(../img/icon_19.png) no-repeat left 9px;
+    line-height: 150%;
+}
+.aw .newslist span{
+    float:right;
+}
+.aw .newslist a{
+    color:#333;
+    text-decoration: none;
+}
+.aw .newslist a:hover{
+    color:#68af63;
+}
+.pagination-container{
+    margin-top:120px;
+    text-align: center;
+}
+.pagination{
+    display: inline-block;
+}
+.pagination a{
+    background-color: #999;
+    color: #fff;
+    padding: 2px 8px;
+    text-decoration:none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor:pointer;
+}
+.pagination a.active{
+    background-color: #85D1FF;
+}
+.page-change{
+    margin: 0 15px;
+    cursor:pointer;
+}
+.skip input{
+        width: 50px;
+}
